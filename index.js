@@ -12,7 +12,7 @@ const authRoute = require("./routes/auth");
 //     console.log("connection done");
 // }).catch((err)=> console.log(err));
 
-dotenv.config({path:'./.env'});
+dotenv.config({path:'./config.env'});
 const DB = process.env.MONGO_URL;
 app.use(express.json())
 mongoose.connect(DB,{
