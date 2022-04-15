@@ -3,6 +3,8 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
+const userRoute = require("./routes/users");
+const postRoute = require("./routes/posts");
 // const DB = 'mongodb+srv://vivek_kumar:La8VWbv9au2YvEP@cluster0.5mxfu.mongodb.net/blogdata?retryWrites=true&w=majority';
 
 // mongoose.connect(DB,{
@@ -22,6 +24,8 @@ mongoose.connect(DB,{
 .catch((err)=>console.log(err));
 
 app.use("/server/auth", authRoute)
+app.use("/server/users", userRoute)
+app.use("/server/posts", postRoute)
 
 app.listen("5000", ()=>{
     console.log("backend is running");
